@@ -2,7 +2,7 @@ import sys
 from time import strftime
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QLCDNumber, QVBoxLayout
 from PyQt5.QtCore import QDate, QTime, QDateTime, Qt, QTimer
-from DigitalClock import DigitalClock
+
 
 class Example(QWidget):
 
