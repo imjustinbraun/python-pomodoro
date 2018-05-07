@@ -1,4 +1,5 @@
 import sys
+import os
 from time import strftime
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QLCDNumber, QVBoxLayout
 from PyQt5.QtCore import QDate, QTime, QDateTime, Qt, QTimer
@@ -62,7 +63,11 @@ class Example(QWidget):
 
     def Time(self):
         self.lcdTime.display(strftime("%H" + ":" + "%M" + ":" + "%S"))
-        if self.timeLeft > 0:
+
+        if self.timeLeft > 1:
+            self.timeLeft -= 1
+        elif self.timeLeft == 1:
+            os.system("""osascript -e 'display notification "{}" with title "{}"'""".format("Time Expired!", "Your time is up!"))
             self.timeLeft -= 1
 
         minutes = int(self.timeLeft / 60)
