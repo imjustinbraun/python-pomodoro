@@ -1,5 +1,0 @@
-venv/**
-.idea/**
-*.pyc
-*.DS_store
-__pycache__
